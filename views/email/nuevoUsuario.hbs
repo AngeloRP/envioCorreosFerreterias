@@ -1,0 +1,44 @@
+<style>
+    .infoTable{
+        display: grid;
+    }
+    .infoTableRow{
+        display: -webkit-box;
+    }
+
+    .infoTable > .infoTableRow > p {
+         font-size: 13px;
+        color: aqua;
+    }
+    
+</style>
+<h2>Información del Usuario:{{names}}</h2>
+<!--<div class="infoTable" style="display: grid;">
+    <div class="infoTableRow" style = "display: -webkit-box;">
+            <p style="margin-left:5px">Correo Electrónico </p>
+            <p style="margin-left:5px">Nombre del Negocio</p>
+            <p style="margin-left:5px">Teléfono</p>
+    </div>
+    <div class="infoTableRow" style = "display: -webkit-box;">
+            <p style="margin-left:5px">{{correoDestino}}</p>
+            <p style="margin-left:5px">{{negocio}}</p>
+            <p style="margin-left:5px">{{telefono}}</p>
+    </div>
+</div>-->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Correo Electrónico</th>
+            <th>Nombre del Negocio</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{correoDestino}}</td>
+            <td>{{negocio}}</td>
+            <td>{{telefono}}</td>
+        </tr>
+    </tbody>
+</table>
+
