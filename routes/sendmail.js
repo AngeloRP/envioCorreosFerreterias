@@ -79,7 +79,7 @@ router.post('/', function (req, res, next) {
         attachments: [
             {
                 filename: 'principal.jpg',
-                path: '../envioCorreosFerreterias/images/principal.jpg',
+                path: 'images/principal.jpg',
                 cid: 'algo'
             },
         ],
