@@ -58,7 +58,7 @@ router.post('/', function (req, res, next) {
 
     let transporter = nodemailer.createTransport(smtpConfig);// nodemailer.createTransport(mg(auth));
     let transporter2 = nodemailer.createTransport(smtpConfig);
-    transporter2.use('nuevoUsuario',hbs({
+    transporter2.use('compile',hbs({
         viewPath:    'views/email',
         extName: '.hbs'
     }));
@@ -87,16 +87,38 @@ router.post('/', function (req, res, next) {
     texto2 = '';
     let mailOptions2 = {
         from: host,//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
+        //to: 'angelorp93@gmail.com',
         to: 'grojas@disnovo.com',  //Genesis
         subject: 'Información del Negocio: ' + businessName,// titulo, // Subject line
-        context: {
-            correoDestino:destinatario,
-            names: names,
-            negocio:businessName,
-            telefono:ownerPhone
-        },
-        template:'nuevoUsuario',
         cc: ['grojas@disnovo.com','"Jorge Chavez" <jchavez@disnovo.com>, "Maria Jimenez"  <mjimenez@disnovo.com>']
+        //cc: ['angelorp93@gmail.com'],
+        /*html: `
+            <h2>Información del Usuario:{{names}}</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Correo Electrónico</th>
+                        <th>Nombre del Negocio</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{destinatario}}</td>
+                        <td>{{businessName}}</td>
+                        <td>{{ownerPhone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        `,*/
+        template:'nuevoUsuario',
+        context: {
+            correoDestino:'sdasdad', //destinatario,
+            names: 'sdasdass',//names,
+            negocio:'asdasdad',//businessName,
+            telefono:'89342432432'//ownerPhone
+        }
+        
         /*context: {
             correoDestino:destinatario,
             names: names,
