@@ -85,7 +85,7 @@ router.post('/', function (req, res, next) {
         ],
     };
     texto2 = '';
-    let mailOption2 = {
+    let mailOptions2 = {
         from: host,//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
         to: 'grojas@disnovo.com',  //Genesis
         subject: 'Información del Negocio: ' + businessName,// titulo, // Subject line
@@ -96,7 +96,7 @@ router.post('/', function (req, res, next) {
             telefono:ownerPhone
         },
         template:'nuevoUsuario',
-        cc: ['grojas@disnovo.com', ' "Jorge Chavez" <jchavez@disnovo.com>, "Maria Jimenez"  <mjimenez@disnovo.com> ']
+        cc: ['grojas@disnovo.com','"Jorge Chavez" <jchavez@disnovo.com>, "Maria Jimenez"  <mjimenez@disnovo.com>']
         /*context: {
             correoDestino:destinatario,
             names: names,
@@ -106,22 +106,22 @@ router.post('/', function (req, res, next) {
         //,// texto, // plain text body
         // cc: [host, ' "Jorge Chavez" <jchavez@disnovo.com>, "Nelson Gimenez"  <njgimenez@gmail.com> ']
     }
-
+  
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
             res.send('Error al enviar mensaje 1');
             return;
         } else {
             //  res.send('Mensaje enviado');
+            console.log('Envio el primer correo');
             transporter2.sendMail(mailOptions2, (error, info) => {
                 if (error) {
-                    console.log(error);
+                    console.log('Error en el envio del segundo correo');
                     res.send('Error al enviar mensaje 2');
                     return;
                 } else {
                     //  res.send('Mensaje enviado');
-                    console.log('Envio Exitoso');
+                    console.log('Envio el segundo correo');
                     res.json(
                         {
                             "success": true,
