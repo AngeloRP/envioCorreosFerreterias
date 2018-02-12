@@ -28,13 +28,13 @@ router.post('/', function (req, res, next) {
     var nombre = req.nombre;
     var correo = req.correo;
     var mensaje = req.mensaje;*/
-
+    var host = 'arodas@disnovo.com';
     var isError = false;
     let smtpConfig = {
         service: 'Gmail',
         auth: {
-            user: 'angelorp93@gmail.com',
-            pass: 'Watchmen'
+            user: host,
+            pass: 'Disnovo1117'
         }
     };
 
@@ -65,7 +65,7 @@ router.post('/', function (req, res, next) {
 
 
     let mailOptions = {
-        from: 'angelorp93@gmail.com',//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
+        from: host,//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
         to: destinatario,  //destinatario, // list of receivers
         subject: titulo,// titulo, // Subject line
         text: texto,// texto, // plain text body
@@ -86,7 +86,7 @@ router.post('/', function (req, res, next) {
     };
     texto2 = '';
     let mailOption2 = {
-        from: 'angelorp93@gmail.com',//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
+        from: host,//' "Mailgun Sandbox" <postmaster@sandboxb70f71a882e2412ba2104b6f61dd4d8d.mailgun.org>', // sender address
         to: 'grojas@disnovo.com',  //Genesis
         subject: 'Información del Negocio: ' + businessName,// titulo, // Subject line
         context: {
@@ -104,7 +104,7 @@ router.post('/', function (req, res, next) {
             telefono:ownerPhone
         }*/
         //,// texto, // plain text body
-        // cc: ['arodas@disnovo.com', ' "Jorge Chavez" <jchavez@disnovo.com>, "Nelson Gimenez"  <njgimenez@gmail.com> ']
+        // cc: [host, ' "Jorge Chavez" <jchavez@disnovo.com>, "Nelson Gimenez"  <njgimenez@gmail.com> ']
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -121,6 +121,7 @@ router.post('/', function (req, res, next) {
                     return;
                 } else {
                     //  res.send('Mensaje enviado');
+                    console.log('Envio Exitoso');
                     res.json(
                         {
                             "success": true,
