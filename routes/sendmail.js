@@ -28,13 +28,13 @@ router.post('/', function (req, res, next) {
     var nombre = req.nombre;
     var correo = req.correo;
     var mensaje = req.mensaje;*/
-    var host = 'arodas@disnovo.com';
+    var host = 'hola@peruferretero.com ';
     var isError = false;
     let smtpConfig = {
         service: 'Gmail',
         auth: {
             user: host,
-            pass: 'Disnovo1117'
+            pass: 'DisnovoPF2018'
         }
     };
 
