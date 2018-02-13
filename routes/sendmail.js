@@ -113,10 +113,10 @@ router.post('/', function (req, res, next) {
         `*/,
         template:'nuevoUsuario',
         context: {
-            correoDestino:'sdasdad', //destinatario,
-            names: 'sdasdass',//names,
-            negocio:'asdasdad',//businessName,
-            telefono:'89342432432'//ownerPhone
+            correoDestino:destinatario,
+            names: names,
+            negocio:businessName,
+            telefono:ownerPhone
         }
         
         /*context: {
