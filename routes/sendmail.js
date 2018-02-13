@@ -110,7 +110,7 @@ router.post('/', function (req, res, next) {
                     </tr>
                 </tbody>
             </table>
-        `,*/
+        `*/,
         template:'nuevoUsuario',
         context: {
             correoDestino:'sdasdad', //destinatario,
